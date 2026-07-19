@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { categories, convert, convertTemperature, temperatureUnits } from './conversions'
 
-const categoryNames = [...Object.keys(categories), 'temperature']
+const categoryNames = [...Object.keys(categories), 'temperature'].sort()
 
 function App() {
   const [category, setCategory] = useState('length')

@@ -265,15 +265,184 @@ electricCurrent: {
       millirem: 0.00001,
     },
   },
-  exposure: {
+exposure: {
     units: {
       coulombPerKilogram: 1,
       roentgen: 0.000258,
       milliroentgen: 0.000000258,
     },
   },
+  thermalConductivity: {
+    units: {
+      wattPerMeterKelvin: 1,
+      kilowattPerMeterKelvin: 1000,
+      btuInPerHourFtSqFtF: 0.144228,
+      calPerSecCmC: 418.4,
+    },
+  },
+  specificHeat: {
+    units: {
+      joulePerKilogramKelvin: 1,
+      kilojoulePerKilogramKelvin: 1000,
+      caloriePerGramCelsius: 4184,
+      btuPerPoundFahrenheit: 4186.8,
+    },
+  },
+  heatTransferCoefficient: {
+    units: {
+      wattPerSquareMeterKelvin: 1,
+      btuPerHourSquareFootFahrenheit: 5.67826,
+      kilocaloriePerHourSquareMeterCelsius: 1.163,
+    },
+  },
+  amountOfSubstance: {
+    units: {
+      mole: 1,
+      millimole: 0.001,
+      kilomole: 1000,
+      micromole: 0.000001,
+    },
+  },
+  molarMass: {
+    units: {
+      gramPerMole: 1,
+      kilogramPerMole: 1000,
+      kilogramPerKilomole: 1,
+    },
+  },
+  dynamicViscosity: {
+    units: {
+      pascalSecond: 1,
+      poise: 0.1,
+      centipoise: 0.001,
+      poundSecondPerSquareFoot: 47.8803,
+    },
+  },
+  kinematicViscosity: {
+    units: {
+      squareMeterPerSecond: 1,
+      stokes: 0.0001,
+      centistokes: 0.000001,
+      squareFootPerSecond: 0.092903,
+    },
+  },
+  magneticField: {
+    units: {
+      tesla: 1,
+      gauss: 0.0001,
+      milligauss: 0.0000001,
+    },
+  },
+  magneticFieldStrength: {
+    units: {
+      amperePerMeter: 1,
+      oersted: 79.5775,
+    },
+  },
+  magneticFlux: {
+    units: {
+      weber: 1,
+      maxwell: 0.00000001,
+    },
+  },
+  magnetomotiveForce: {
+    units: {
+      ampereTurn: 1,
+      gilbert: 0.795775,
+    },
+  },
+  acceleration: {
+    units: {
+      meterPerSecondSquared: 1,
+      footPerSecondSquared: 0.3048,
+      standardGravity: 9.80665,
+      gal: 0.01,
+    },
+  },
+  illuminance: {
+    units: {
+      lux: 1,
+      footCandle: 10.7639,
+      phot: 10000,
+    },
+  },
+  luminance: {
+    units: {
+      candelaPerSquareMeter: 1,
+      stilb: 10000,
+      nit: 1,
+    },
+  },
+  luminousFlux: {
+    units: {
+      lumen: 1,
+    },
+  },
+  luminousIntensity: {
+    units: {
+      candela: 1,
+    },
+  },
+  frequency: {
+    units: {
+      hertz: 1,
+      kilohertz: 1000,
+      megahertz: 1000000,
+      gigahertz: 1000000000,
+      rpm: 0.0166667,
+    },
+  },
+  massFlowRate: {
+    units: {
+      kilogramPerSecond: 1,
+      kilogramPerHour: 0.000277778,
+      poundPerSecond: 0.453592,
+      poundPerHour: 0.000125998,
+    },
+  },
+  volumetricFlowRate: {
+    units: {
+      cubicMeterPerSecond: 1,
+      literPerSecond: 0.001,
+      gallonPerMinuteUS: 0.0000630902,
+      cubicFeetPerMinute: 0.000471947,
+    },
+  },
+  concentration: {
+    units: {
+      kilogramPerLiter: 1,
+      gramPerLiter: 0.001,
+      partPerMillion: 0.000001,
+      molePerCubicMeter: 0.001,
+      molePerLiter: 1,
+    },
+  },
+  surfaceTension: {
+    units: {
+      newtonPerMeter: 1,
+      dynePerCentimeter: 0.001,
+    },
+  },
+  heatFluxDensity: {
+    units: {
+      wattPerSquareMeter: 1,
+      btuPerHourSquareFoot: 3.15459,
+    },
+  },
+  entropy: {
+    units: {
+      joulePerKelvin: 1,
+      caloriePerKelvin: 4.184,
+      btuPerRankine: 1899.1,
+    },
+  },
+  specificVolume: {
+    units: {
+      cubicMeterPerKilogram: 1,
+      cubicFootPerPound: 0.0624280,
+    },
+  },
 }
-
 // Generic converter for all linear (multiplier-based) categories above
 export function convert(value, fromUnit, toUnit, categoryName) {
   const units = categories[categoryName].units
