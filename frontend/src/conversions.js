@@ -235,6 +235,43 @@ electricCurrent: {
       megavolt: 1000000,
     },
   },
+  radioactivity: {
+    units: {
+      becquerel: 1,
+      kilobecquerel: 1000,
+      megabecquerel: 1000000,
+      curie: 37000000000,
+      millicurie: 37000000,
+      microcurie: 37000,
+      disintegrationPerMinute: 0.0166667,
+    },
+  },
+  absorbedDose: {
+    units: {
+      gray: 1,
+      milligray: 0.001,
+      microgray: 0.000001,
+      kilogray: 1000,
+      rad: 0.01,
+      millirad: 0.00001,
+    },
+  },
+  equivalentDose: {
+    units: {
+      sievert: 1,
+      millisievert: 0.001,
+      microsievert: 0.000001,
+      rem: 0.01,
+      millirem: 0.00001,
+    },
+  },
+  exposure: {
+    units: {
+      coulombPerKilogram: 1,
+      roentgen: 0.000258,
+      milliroentgen: 0.000000258,
+    },
+  },
 }
 
 // Generic converter for all linear (multiplier-based) categories above
