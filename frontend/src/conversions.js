@@ -167,6 +167,74 @@ export const categories = {
       stickOfButter: 113.4,
     },
   },
+electricCurrent: {
+    units: {
+      ampere: 1,
+      milliampere: 0.001,
+      microampere: 0.000001,
+      kiloampere: 1000,
+    },
+  },
+  electricResistance: {
+    units: {
+      ohm: 1,
+      milliohm: 0.001,
+      kiloohm: 1000,
+      megaohm: 1000000,
+    },
+  },
+  electricConductance: {
+    units: {
+      siemens: 1,
+      millisiemens: 0.001,
+      microsiemens: 0.000001,
+      kilosiemens: 1000,
+    },
+  },
+  electricalResistivity: {
+    units: {
+      ohmMeter: 1,
+      ohmCentimeter: 0.01,
+      microohmCentimeter: 0.00000001,
+    },
+  },
+  electricalConductivity: {
+    units: {
+      siemensPerMeter: 1,
+      siemensPerCentimeter: 100,
+    },
+  },
+  capacitance: {
+    units: {
+      farad: 1,
+      millifarad: 0.001,
+      microfarad: 0.000001,
+      nanofarad: 0.000000001,
+      picofarad: 0.000000000001,
+    },
+  },
+  inductance: {
+    units: {
+      henry: 1,
+      millihenry: 0.001,
+      microhenry: 0.000001,
+    },
+  },
+  electricCharge: {
+    units: {
+      coulomb: 1,
+      milliampereHour: 3.6,
+      ampereHour: 3600,
+    },
+  },
+  electricPotential: {
+    units: {
+      volt: 1,
+      millivolt: 0.001,
+      kilovolt: 1000,
+      megavolt: 1000000,
+    },
+  },
 }
 
 // Generic converter for all linear (multiplier-based) categories above
