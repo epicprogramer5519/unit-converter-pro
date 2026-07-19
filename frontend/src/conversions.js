@@ -113,6 +113,60 @@ export const categories = {
       bit: 0.125,
     },
   },
+  force: {
+    units: {
+      newton: 1,
+      dyne: 0.00001,
+      poundForce: 4.44822,
+      kilogramForce: 9.80665,
+    },
+  },
+  torque: {
+    units: {
+      newtonMeter: 1,
+      poundFoot: 1.35582,
+      poundInch: 0.112985,
+      kilogramForceMeter: 9.80665,
+    },
+  },
+  angle: {
+    units: {
+      radian: 1,
+      degree: 0.0174533,
+      gradian: 0.015708,
+      arcminute: 0.000290888,
+      arcsecond: 0.00000484814,
+    },
+  },
+  density: {
+    units: {
+      kilogramPerCubicMeter: 1,
+      gramPerCubicCentimeter: 1000,
+      poundPerCubicFoot: 16.0185,
+      poundPerCubicInch: 27679.9,
+    },
+  },
+  fuelEconomy: {
+    units: {
+      kilometerPerLiter: 1,
+      milesPerGallonUS: 0.425144,
+      milesPerGallonUK: 0.354006,
+      milesPerLiter: 1.60934,
+    },
+  },
+  cooking: {
+    units: {
+      milliliter: 1,
+      teaspoon: 4.92892,
+      tablespoon: 14.7868,
+      cup: 240,
+      fluidOunce: 29.5735,
+      pint: 473.176,
+      quart: 946.353,
+      gallon: 3785.41,
+      stickOfButter: 113.4,
+    },
+  },
 }
 
 // Generic converter for all linear (multiplier-based) categories above
