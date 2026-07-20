@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { categories, convert, convertTemperature, temperatureUnits } from './conversions'
+import { parseQuery } from './nlpParser'
 
 const categoryNames = [...Object.keys(categories), 'temperature'].sort()
 
@@ -8,6 +9,8 @@ function App() {
   const [value, setValue] = useState(1)
   const [fromUnit, setFromUnit] = useState('meter')
   const [toUnit, setToUnit] = useState('foot')
+  const [nlpText, setNlpText] = useState('')
+  const [nlpError, setNlpError] = useState('')
 
   const isTemp = category === 'temperature'
   const unitList = isTemp ? temperatureUnits : Object.keys(categories[category].units)
@@ -23,10 +26,35 @@ function App() {
     setToUnit(units[1])
   }
 
+  function handleNlpSubmit(e) {
+    e.preventDefault()
+    const parsed = parseQuery(nlpText)
+    if (!parsed) {
+      setNlpError("Couldn't understand that. Try something like '10 km to miles'")
+      return
+    }
+    setNlpError('')
+    setCategory(parsed.category)
+    setValue(parsed.value)
+    setFromUnit(parsed.fromUnit)
+    setToUnit(parsed.toUnit)
+  }
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
       <div className="bg-gray-800 p-8 rounded-xl shadow-lg w-96">
         <h1 className="text-2xl font-bold mb-6 text-center">Unit Converter Pro</h1>
+
+        <form onSubmit={handleNlpSubmit} className="mb-6">
+          <input
+            type="text"
+            value={nlpText}
+            onChange={(e) => setNlpText(e.target.value)}
+            placeholder="Try: 10 km to miles"
+            className="w-full p-2 rounded bg-gray-700 text-white placeholder-gray-400"
+          />
+          {nlpError && <p className="text-red-400 text-sm mt-1">{nlpError}</p>}
+        </form>
 
         <select
           value={category}
