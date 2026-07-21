@@ -19,6 +19,14 @@ function App() {
     ? convertTemperature(Number(value), fromUnit, toUnit)
     : convert(Number(value), fromUnit, toUnit, category)
 
+  function logConversion() {
+    fetch('http://localhost:3000/api/log-conversion', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ category, value, fromUnit, toUnit, result }),
+    }).catch(() => {})
+  }
+
   function handleCategoryChange(newCategory) {
     setCategory(newCategory)
     const units = newCategory === 'temperature' ? temperatureUnits : Object.keys(categories[newCategory].units)
@@ -95,9 +103,16 @@ function App() {
           </select>
         </div>
 
-        <p className="text-center text-lg">
+        <p className="text-center text-lg mb-4">
           Result: <span className="font-bold">{result.toFixed(4)}</span> {toUnit}
         </p>
+
+        <button
+          onClick={logConversion}
+          className="w-full p-2 rounded bg-blue-600 hover:bg-blue-700 text-white text-sm"
+        >
+          Save to History
+        </button>
       </div>
     </div>
   )
