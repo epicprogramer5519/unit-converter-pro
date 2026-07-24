@@ -15,9 +15,14 @@ function App() {
   const isTemp = category === 'temperature'
   const unitList = isTemp ? temperatureUnits : Object.keys(categories[category].units)
 
-  const result = isTemp
-    ? convertTemperature(Number(value), fromUnit, toUnit)
-    : convert(Number(value), fromUnit, toUnit, category)
+  const numericValue = Number(value)
+  const isValidNumber = value !== '' && !isNaN(numericValue)
+
+  const result = isValidNumber
+    ? (isTemp
+        ? convertTemperature(numericValue, fromUnit, toUnit)
+        : convert(numericValue, fromUnit, toUnit, category))
+    : null
 
   function logConversion() {
     fetch('http://localhost:3000/api/log-conversion', {
@@ -104,7 +109,10 @@ function App() {
         </div>
 
         <p className="text-center text-lg mb-4">
-          Result: <span className="font-bold">{result.toFixed(4)}</span> {toUnit}
+          {isValidNumber
+            ? <>Result: <span className="font-bold">{result.toFixed(4)}</span> {toUnit}</>
+            : <span className="text-gray-400">Enter a valid number</span>
+          }
         </p>
 
         <button
